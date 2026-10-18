@@ -1,19 +1,43 @@
-from books import show_books
+from books import show_books, load_books, save_books
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 name = input("Please enter your name: ")
-print(f"welcome, {name}")
 
-count = int(input("how many books do you want to add? "))
-books = []
+admin_password = os.getenv("ADMIN_PASSWORD")
+open_admin = input("do you want to open admin mode? (yes/no)")
+
+if open_admin.lower() == "yes":
+    entered_password = input("enter password : ")
+    print("hello admin")
+elif open_admin.lower() == "no":
+    print("alright")
+else:
+    print("wrong password")
 
 
 
-for i in range(count):
-    book = input("please enter a book name: ")
+
+print(f"welcome, {name} to personal book manager")
+
+books = load_books()
+
+number_of_books = int(input("\nhow many books do you want to add??"))
+
+
+
+
+
+
+
+for i in range(number_of_books):
+    book = input(f"please enter a book name {i + 1}: ")
     books.append(book)
 
-print("your books are: ")
+save_books(books)
 
-for book in books:
-    print(book)
+
+
+show_books(books)
