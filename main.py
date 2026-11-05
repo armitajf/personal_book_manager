@@ -7,37 +7,41 @@ load_dotenv()
 name = input("Please enter your name: ")
 
 admin_password = os.getenv("ADMIN_PASSWORD")
-open_admin = input("do you want to open admin mode? (yes/no)")
+open_admin = input("Do you want to open admin mode? (yes/no): ")
 
 if open_admin.lower() == "yes":
-    entered_password = input("enter password : ")
-    print("hello admin")
+    entered_password = input("Enter password: ")
+
+    if entered_password == admin_password:
+        print("Hello admin")
+    else:
+        print("Wrong password")
+
 elif open_admin.lower() == "no":
-    print("alright")
+    print("Alright")
 else:
-    print("wrong password")
+    print("Invalid answer")
 
-
-
-
-print(f"welcome, {name} to personal book manager")
+print(f"Welcome, {name} to Personal Book Manager")
 
 books = load_books()
 
-number_of_books = int(input("\nhow many books do you want to add??"))
-
-
-
-
-
-
+number_of_books = int(input("\nHow many books do you want to add? "))
 
 for i in range(number_of_books):
-    book = input(f"please enter a book name {i + 1}: ")
-    books.append(book)
+    book_name = input(f"Please enter book name {i + 1}: ")
+
+    priority = input("Enter priority (low/medium/high): ").lower()
+
+    while priority not in ["low", "medium", "high"]:
+        print("Invalid priority!")
+        priority = input("Enter priority (low/medium/high): ").lower()
+
+    books.append({
+        "name": book_name,
+        "priority": priority
+    })
 
 save_books(books)
-
-
 
 show_books(books)
