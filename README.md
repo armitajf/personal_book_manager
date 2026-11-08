@@ -7,6 +7,7 @@ A simple book managment project built with python
 - Save books in a JSON file
 - Load previously saved books
 - Admin mode
+- Add priority levels to books
 
 ## Requirements
 - Python
@@ -101,7 +102,11 @@ personal_book_manager/
 - Check: Make sure the .env file exists and BOOK_MANAGER_ADMIN_PASSWORD is written correctly.
 
 
-
+## Book Priority
+Each book can have one of three priority levels:
+- low
+- medium
+- high
 
 
 
