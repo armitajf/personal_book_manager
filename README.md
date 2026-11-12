@@ -1,5 +1,5 @@
 # Personal Book Manager
-A simple book managment project built with python
+A simple book managment project built with python for learning git & github
 
 ## Features
 - Add multiple books
