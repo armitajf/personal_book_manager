@@ -22,7 +22,7 @@ elif open_admin.lower() == "no":
 else:
     print("Invalid answer")
 
-print(f"Welcome, {name} to Personal Book Manager")
+print(f"Welcome, {name}")
 
 books = load_books()
 
