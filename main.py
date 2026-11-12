@@ -45,3 +45,5 @@ for i in range(number_of_books):
 save_books(books)
 
 show_books(books)
+
+print("you have ", len(books), " books in your collection")
