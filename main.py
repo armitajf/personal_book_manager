@@ -43,6 +43,8 @@ for i in range(number_of_books):
         "priority": priority
     })
 
+    print("Python basics added successfully.")
+
 save_books(books)
 
 show_books(books)
